@@ -1,0 +1,30 @@
+{
+    "name": "re-hooks",
+    "version": "0.0.1",
+    "description": "Reusable hooks for React apps",
+    "license": "ISC",
+    "author": "hir0protagonist",
+    "main": "dist/index.umd.js",
+    "module": "dist/index.es.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "vite build",
+        "prepare": "npm run build"
+    },
+    "peerDependencies": {
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1"
+    },
+    "devDependencies": {
+        "@types/react": "^19.1.12",
+        "@types/react-dom": "^19.1.9",
+        "@vitejs/plugin-react": "^5.0.2",
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1",
+        "typescript": "^5.9.2",
+        "vite": "^7.1.3"
+    }
+}
