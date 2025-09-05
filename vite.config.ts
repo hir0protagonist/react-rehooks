@@ -10,6 +10,7 @@ export default defineConfig({
             name: 're-hooks',
             fileName: 'index',
         },
+        sourcemap: true,
         rollupOptions: {
             external: ['react', 'react-dom'],
             output: {
