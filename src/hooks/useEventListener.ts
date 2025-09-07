@@ -15,22 +15,22 @@ export function useEventListener<K extends keyof WindowEventMap>(
     handler: (e: WindowEventMap[K]) => void,
     element?: EventTarget<Window>,
     options?: EventOptopns
-): void;
+): () => void;
 export function useEventListener<K extends keyof DocumentEventMap>(
     eventName: K,
     handler: (e: DocumentEventMap[K]) => void,
     element: EventTarget<Document>,
     options?: EventOptopns
-): void;
+): () => void;
 export function useEventListener<K extends keyof HTMLElementEventMap>(
     eventName: K,
     handler: (e: HTMLElementEventMap[K]) => void,
     element: EventTarget<HTMLElement>,
     options?: EventOptopns
-): void;
-export function useEventListener<T = Event>(eventName: string, handler: (e: T) => void, element: EventTarget<EventElement>, options?: EventOptopns): void;
+): () => void;
+export function useEventListener<T = Event>(eventName: string, handler: (e: T) => void, element: EventTarget<EventElement>, options?: EventOptopns): () => void;
 
-export function useEventListener(eventName: string, handler: (e: Event) => void, element?: EventTarget<EventElement>, options?: EventOptopns) {
+export function useEventListener(eventName: string, handler: (e: Event) => void, element?: EventTarget<EventElement>, options?: EventOptopns): () => void {
     const handlerRef = useRef(handler);
     const cleanupRef = useRef<() => void>(() => {});
 
