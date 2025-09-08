@@ -13,7 +13,8 @@
     "scripts": {
         "build": "vite build",
         "prepare": "npm run build",
-        "test": "jest"
+        "test": "jest",
+        "typecheck": "tsc --noEmit"
     },
     "peerDependencies": {
         "react": "^19.0.0",

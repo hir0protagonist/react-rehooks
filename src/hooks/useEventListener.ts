@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 type EventElement = HTMLElement | Document | Window;
-type EventOptopns = AddEventListenerOptions | boolean;
+type EventOptions = AddEventListenerOptions | boolean;
 type EventTarget<T extends EventElement> = T | React.RefObject<T>;
 
 function resolveTarget<T extends EventElement>(target?: EventTarget<T>): T | undefined {
@@ -14,23 +14,23 @@ export function useEventListener<K extends keyof WindowEventMap>(
     eventName: K,
     handler: (e: WindowEventMap[K]) => void,
     element?: EventTarget<Window>,
-    options?: EventOptopns
+    options?: EventOptions
 ): () => void;
 export function useEventListener<K extends keyof DocumentEventMap>(
     eventName: K,
     handler: (e: DocumentEventMap[K]) => void,
     element: EventTarget<Document>,
-    options?: EventOptopns
+    options?: EventOptions
 ): () => void;
 export function useEventListener<K extends keyof HTMLElementEventMap>(
     eventName: K,
     handler: (e: HTMLElementEventMap[K]) => void,
     element: EventTarget<HTMLElement>,
-    options?: EventOptopns
+    options?: EventOptions
 ): () => void;
-export function useEventListener<T = Event>(eventName: string, handler: (e: T) => void, element: EventTarget<EventElement>, options?: EventOptopns): () => void;
+export function useEventListener<T = Event>(eventName: string, handler: (e: T) => void, element: EventTarget<EventElement>, options?: EventOptions): () => void;
 
-export function useEventListener(eventName: string, handler: (e: Event) => void, element?: EventTarget<EventElement>, options?: EventOptopns): () => void {
+export function useEventListener(eventName: string, handler: (e: Event) => void, element?: EventTarget<EventElement>, options?: EventOptions): () => void {
     const handlerRef = useRef(handler);
     const cleanupRef = useRef<() => void>(() => {});
 

@@ -3,11 +3,10 @@ import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-    plugins: [react(), dts()],
     build: {
         lib: {
-            entry: './src/index.ts',
-            name: 're-hooks',
+            entry: 'src/index.ts',
+            name: 'react-rehooks',
             fileName: 'index',
         },
         sourcemap: true,
@@ -21,4 +20,5 @@ export default defineConfig({
             },
         },
     },
+    plugins: [react(), dts()],
 });

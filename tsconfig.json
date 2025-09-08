@@ -1,14 +1,15 @@
 {
     "compilerOptions": {
-        //"rootDir": "./src",
-        "outDir": "./dist",
+        "outDir": "dist",
         "module": "esnext",
         "target": "esnext",
-        "moduleResolution": "bundler",
-        "esModuleInterop": true,
-        "sourceMap": true,
+        "moduleResolution": "node",
         "declaration": true,
         "declarationMap": true,
+        "sourceMap": true,
+        "emitDeclarationOnly": false,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
         "noUncheckedIndexedAccess": true,
         "exactOptionalPropertyTypes": true,
         "noImplicitReturns": true,
@@ -22,7 +23,8 @@
         "verbatimModuleSyntax": true,
         "isolatedModules": true,
         "noUncheckedSideEffectImports": true,
-        "moduleDetection": "force",
-        "skipLibCheck": true
-    }
+        "moduleDetection": "force"
+    },
+    "include": ["src"],
+    "exclude": ["**/__tests__/**"]
 }
