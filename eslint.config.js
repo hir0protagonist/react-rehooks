@@ -7,9 +7,7 @@ export default [
     ...tseslint.configs.recommended,
     // prettier,
     {
-        rules: {
-            'no-console': 'warn',
-        },
+        rules: {},
         ignores: [],
     },
 ];
